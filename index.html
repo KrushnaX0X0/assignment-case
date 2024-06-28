@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Text changer</title>
 </head>
 <body>
@@ -20,8 +18,8 @@
         #textarea{
             height: 40vh;
             width: 50vw;
-            box-shadow:  20px 20px 100px #a2b3b3,
-             -20px -20px 100px #b3aeb3;
+            box-shadow:  20px 20px 100px #6b6d6d,
+             -20px -20px 100px #696769;
            
 
         }
@@ -46,7 +44,7 @@
             background-color: #333;
             color: antiquewhite;
         }
-        .result{
+        #result{
             text-align: center;
             font-size: 2vw;
             color: antiquewhite;
@@ -56,34 +54,34 @@
     <div class="continer">
     <textarea name="textarea" id="textarea" placeholder="Enter your text...."></textarea>
     </div>
-    <p class="result"> </p>
+    <p id="result"> </p>
 
     <div class="btn-continer">
-         <button class="btn" onclick="text('upper')">UPPERCASE</button>
-         <button class="btn" onclick="text('lower')">LOWERCASE</button>
-         <button class="btn" onclick="text('count latter')">COUNT LATTER</button>
-         <button class="btn" onclick="text()">COUNT WORDS</button>
+         <button class="btn" onclick="countText('upper')">UPPERCASE</button>
+         <button class="btn" onclick="countText('lower')">LOWERCASE</button>
+         <button class="btn" onclick="countText('countlatter')">COUNT LATTER</button>
+         <button class="btn" onclick="countText()">COUNT WORDS</button>
     </div>
 
     <script>
-        function text(){
+        function countText(opration){
         const textElement = document.getElementById("textarea").value;
-        const resultelement = document.getElementById("result")
+        const resultElement = document.getElementById("result")
 
-        switch(opration)
+        switch (opration)
         {
             case 'upper':
-            resultelement.innerText = input.toUpperCase();
+            resultElement.innerText = textElement.toUpperCase();
             break;
             case 'lower':
-            resultelement.innerText = input.toLowerCase();
+            resultElement.innerText = textElement.toLowerCase();
             break;
-            case 'count latter':
-            resultelement.innerText = input.`total letters: ${input.length}`;
+            case 'countlatter':
+                resultElement.innerText=`total latters :${textElement.length}`
             break;
 
             default:
-            resultelement.innerText = input.`total words: ${input.split(" ")length}`;
+            resultElement.innerText = `total words ${textElement.split(" ").length}`;
             break;
 
 
