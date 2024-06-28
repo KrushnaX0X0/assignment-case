@@ -49,6 +49,55 @@
             font-size: 2vw;
             color: antiquewhite;
         }
+        
+         @media screen and (max-width:480px){
+          
+            h1{
+            text-align: center;
+            font-size: 9vw;
+            color: azure;
+        }
+        
+        #textarea{
+            height: 17vh;
+            width: 92vw;
+            box-shadow:  20px 20px 100px #6b6d6d,
+             -20px -20px 100px #696769;
+           
+
+        }
+        .continer{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-continer{
+            margin: 40px auto;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .btn{
+            height: 5vh;
+            width: 22vw;
+            cursor: pointer;
+            border-radius: 10px;
+            font-size: 2.5vw;
+            font-weight: 400;
+            background-color: #333;
+            color: antiquewhite;
+        }
+        #result{
+            text-align: center;
+            font-size: 2vw;
+            color: antiquewhite;
+        }
+         }
+            
+         
+
+            
+        
     </style>
      <h1>Text Changer</h1>
     <div class="continer">
@@ -77,11 +126,11 @@
             resultElement.innerText = textElement.toLowerCase();
             break;
             case 'countlatter':
-                resultElement.innerText=`total latters :${textElement.length}`
+                resultElement.innerText=`Total latters :${textElement.length}`
             break;
 
             default:
-            resultElement.innerText = `total words ${textElement.split(" ").length}`;
+            resultElement.innerText = `Total words ${textElement.split(" ").length}`;
             break;
 
 
