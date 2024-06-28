@@ -7,15 +7,21 @@
 </head>
 <body>
     <style>
-        
+        body{
+            background-color: #333;
+        }
+
         h1{
             text-align: center;
             font-size: 3vw;
+            color: azure;
         }
         
         #textarea{
             height: 40vh;
             width: 50vw;
+            box-shadow:  20px 20px 100px #a2b3b3,
+             -20px -20px 100px #b3aeb3;
            
 
         }
@@ -24,11 +30,68 @@
             align-items: center;
             justify-content: center;
         }
+
+        .btn-continer{
+            margin: 40px auto;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .btn{
+            height: 6vh;
+            width: 8vw;
+            cursor: pointer;
+            border-radius: 10px;
+            font-size: 1vw;
+            font-weight: 400;
+            background-color: #333;
+            color: antiquewhite;
+        }
+        .result{
+            text-align: center;
+            font-size: 2vw;
+            color: antiquewhite;
+        }
     </style>
      <h1>Text Changer</h1>
     <div class="continer">
     <textarea name="textarea" id="textarea" placeholder="Enter your text...."></textarea>
     </div>
+    <p class="result"> </p>
+
+    <div class="btn-continer">
+         <button class="btn" onclick="text('upper')">UPPERCASE</button>
+         <button class="btn" onclick="text('lower')">LOWERCASE</button>
+         <button class="btn" onclick="text('count latter')">COUNT LATTER</button>
+         <button class="btn" onclick="text()">COUNT WORDS</button>
+    </div>
+
+    <script>
+        function text(){
+        const textElement = document.getElementById("textarea").value;
+        const resultelement = document.getElementById("result")
+
+        switch(opration)
+        {
+            case 'upper':
+            resultelement.innerText = input.toUpperCase();
+            break;
+            case 'lower':
+            resultelement.innerText = input.toLowerCase();
+            break;
+            case 'count latter':
+            resultelement.innerText = input.`total letters: ${input.length}`;
+            break;
+
+            default:
+            resultelement.innerText = input.`total words: ${input.split(" ")length}`;
+            break;
+
+
+
+        }
+
+        }
+    </script>
 
 </body>
 </html>
